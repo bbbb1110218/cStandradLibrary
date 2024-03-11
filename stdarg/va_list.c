@@ -18,6 +18,14 @@
  * @note:
  *      printf 是用fmt里面的%判断参数的个数,然后%d 判断参数是什么类型
  * 
+ * @note:
+ *      va_list 是在栈中参数的指针,指向函数的参数
+ *     需要va_start(arg,firstParam) 之后的arg 才属于va_list类型
+ *     stdio.h 有很多函数参数都是v开头的函数 比如
+ *     (vprintf,vscanf,vfscanf,vsscanf) 都需要va_start之后才能使用
+ * 
+ *   
+ * 
 */
 
 
