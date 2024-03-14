@@ -4,7 +4,17 @@
 
 /**
  *  @function origin:
-        char	*strstr(const char *__big, const char *__little);
+        char *strstr(const char *haystack, const char *needle);
+        strstr 函数
+声明
+;
+描述
+strstr 函数在字符串 haystack 中查找第一次出现字符串 needle 的位置，该位置是一个指向 haystack 中的指针。
+如果 needle 为空字符串，strstr 将返回 haystack 的开始位置。如果 needle 在 haystack 中不存在，strstr 将返回 NULL。
+
+参数
+
+如果 needle 是 haystack 的子字符串，那么 strstr 返回一个指向 haystack 中 needle 第一次出现的位置的指针。如果 needle 不是 haystack 的子字符串，那么 strstr 返回 NULL。
  *      
  * 
 */
