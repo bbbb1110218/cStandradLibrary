@@ -7,7 +7,7 @@ int MyVsprintf(char * ps, char * format,...){
     va_list ap;
     va_start(ap,format);
     n=vsprintf(ps,format,ap);
-    // va_end(ap);
+    va_end(ap);
 
     return n;
 
