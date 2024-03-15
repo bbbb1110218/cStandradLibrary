@@ -24,6 +24,7 @@ int main(){
     char s2[20]=" kitty";
     printf("%s\n",Qstrncat(s,s2,strlen(s2)+1));
 
+
     return 0;
 
 }
