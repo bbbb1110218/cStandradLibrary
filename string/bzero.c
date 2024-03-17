@@ -24,7 +24,6 @@ int main() {
 	strcpy(str, "This is string.h library function");
 	puts(str);
 	bzero(str, 7);
-	puts(str);
-	return 0;
+puts(str);
+return 0;
 }
-
