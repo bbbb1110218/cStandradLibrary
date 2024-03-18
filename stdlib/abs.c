@@ -3,9 +3,9 @@
 
 
 /**
- *   @func:
+ *   @func: int abs(int);
  *        
- *   @brief
+ *   @brief: 整数的绝对值
  *      
  *   @param
  *   @param
@@ -16,6 +16,9 @@
  *   @note 
 */
 int main(){
+    
+    printf("abs(1) = %d\n",abs(1));
+    printf("abs(-1) = %d\n",abs(-1));
 
     return 0;
 }
