@@ -33,7 +33,7 @@ int main(){
     int iVal=5;
 
     //int to string
-    sprintf(Buff, "Fuck you bitch %d", iVal);
+    sprintf(Buff, "Fubck you byribtch %d", iVal);
  
 
     fputs(Buff,stdout);
