@@ -7,6 +7,24 @@
 `struct tm` 存储时间的结构体 里面有年，月，日，时，分，秒
 
 
+# 用法
+
+`time` 获取时间戳
+
+`ctime`  size_t to str
+
+`asctime` struct tm * to str
+
+`gmtime`   size_t  to struct tm  格林时间
+
+`localtime`  time_t to struct tm 本地时间
+
+`strftime`  struct tm * to str by format
+
+`strptime`  timeStr to struct tm  by format
+
+
+
 # 在 C 语言的标准库中，`time.h` 头文件提供了一些处理时间和日期的函数。以下是一些主要的函数：
 
 1. `time_t time(time_t *t)`: 返回当前的时间（从 1970 年 1 月 1 日 00:00:00 UTC 开始的秒数）。如果 `t` 不是 NULL，那么返回的时间也会被存储在 `t` 指向的位置。
