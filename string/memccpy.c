@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 /**
- 
- 
-		void *memccpy(void *dest, const void *src, int c, size_t n);
-
-		memory stop character while copying.
-	@doc:
-		从src拷贝n个字节到dest，直到c被找到。dest 包括c
-		返回值指向c后面的字符，用于终止字符串。	
+ *
+ *
+ *		void *memccpy(void *dest, const void *src, int c, size_t n);
+ *
+ *		memory stop character while copying.
+ *	@doc:
+ *		从src拷贝n个字节到dest，直到c被找到。dest 包括c
+ *		返回值指向c后面的字符，用于终止字符串。	
 	@brief :
 		from src copy n bytes to dest until c is found.
 
