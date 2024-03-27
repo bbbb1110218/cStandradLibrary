@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <errno.h>
 
 
 /**
@@ -39,7 +40,7 @@ int main() {
     printf("p1 =%p\n",p1);
 
     void *p2=p1+0x100;
-    if(brk(p2) == -1){
+    if(brk(p2) == (void *)-1 && errno ){
         perror("brk");
         exit(EXIT_FAILURE);
     } 
