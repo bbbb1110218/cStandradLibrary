@@ -35,7 +35,8 @@ int main(){
         if(!strncmp(entry->d_name,".",1) || !strncmp(entry->d_name,"..",2))continue;
 
         snprintf(dirhead,BUFSIZ,"%s/%s",dirStr,entry->d_name);
-        stat(dirhead,&st);
+
+        stat(dirhead,&st);      //stat需要使用完整路径
         printf("%50s\t ",dirhead);
         if(S_ISDIR(st.st_mode)){
             printf("%s\n","is Dir");
