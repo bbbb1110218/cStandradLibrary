@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <stdlib/stdlib.c>
+#include <stdlib.c>
 #include <string.h>
 
 
