@@ -19,7 +19,13 @@ int main(){
 
     const char *p=strchr(str,'l');
     const char *p2=strchr(str2,'l');
-    puts(p);
+    if(!p){
+		puts("没有找到");
+	}else{
+
+	puts(p);
+	}
+	
     puts("\n");
     puts(p2);
     return 0;
