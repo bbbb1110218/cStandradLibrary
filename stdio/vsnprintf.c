@@ -3,6 +3,21 @@
 #include <string.h>
 
 
+/**
+ *  @function : int vsnprintf(Buff,BuffMaxSize,format,ap)
+ * 
+ *  @brief: vsnprintf 自动根据format 的格式化内容 取 参数
+ * 
+ *  @param: Buff  缓存
+ *  @param: BuffMAxSize  缓存容量
+ *  @param: "format"    格式化的字符 like   "say hello to %s %d times "
+ *                      vsnprint 自动根据 格式化的内容 自动在参数的栈空间取值 
+ *                      上面的内容会取两次  %s 取一个char *
+ *                                       %d 取一个int
+ *  @param: ap 已经 va_start() 过的ap值
+ * 
+ * 
+*/
 
 int MyVsnPrintf(char *buff,int maxLen,const char *format,...){
     char *p=buff;
