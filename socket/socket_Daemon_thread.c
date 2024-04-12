@@ -30,8 +30,8 @@ void SHOW_ERR(char *str,int ExitCode){
 }
 
 int main(int argc,char *argv[]) {
-    if(argc !=3){
-        fprintf(stderr,"Usage:%s <Ip> <Port>",argv[0]);
+    if(argc !=2){
+        fprintf(stderr,"Usage:%s <Port>",argv[0]);
         exit(EXIT_FAILURE);
     }
     struct sockaddr_in Server,Client;
@@ -45,10 +45,11 @@ int main(int argc,char *argv[]) {
     memset(&Client,0,sizeof(Server));
 
     Server.sin_family=AF_INET;
-    Server.sin_port=htons((unsigned short)atoi(argv[2]));
-    if(inet_pton(AF_INET, argv[1], &Server.sin_addr.s_addr) == -1){
-        SHOW_ERR("inet_pton",EXIT_FAILURE);
-    }
+    Server.sin_addr.s_addr =INADDR_ANY;
+    Server.sin_port=htons((unsigned short)atoi(argv[1]));
+    // if(inet_pton(AF_INET, argv[1], &Server.sin_addr.s_addr) == -1){
+    //     SHOW_ERR("inet_pton",EXIT_FAILURE);
+    // }
 
     if(bind(fd,(struct sockaddr*)&Server,sizeof(Server)) == -1 || listen(fd,50) == -1){
         SHOW_ERR("bind",EXIT_FAILURE);
@@ -71,7 +72,7 @@ int main(int argc,char *argv[]) {
         time(CurTime);
         tm =localtime(CurTime);
         memset(tim_str,0,BUFSIZ);
-        strftime(tim_str,BUFSIZ,"Curent time:%Y-%m-%d %H:%M:%S",tm);
+        strftime(tim_str,BUFSIZ,"Curent time:%Y-%m-%d %H:%M:%S\n",tm);
 
 
         fprintf(stdout,"%s :%s\n",CLIENTIP,"Query time");
