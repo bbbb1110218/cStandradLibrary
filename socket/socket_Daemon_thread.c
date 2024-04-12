@@ -55,8 +55,7 @@ int main(int argc,char *argv[]) {
         SHOW_ERR("bind",EXIT_FAILURE);
     }
 
-    time_t *CurTime;
-    struct tm *tm ;
+
     char tim_str[BUFSIZ];
     char CLIENTIP[BUFSIZ];
     char Msg[BUFSIZ];
@@ -64,15 +63,15 @@ int main(int argc,char *argv[]) {
     while(1){
         socklen_t len=sizeof(Client);
         int Cfd = accept(fd,(struct sockaddr *)&Client,&len);
+        if(Cfd < 0 ){SHOW_ERR("socket",-1);};
 
         if(inet_ntop(AF_INET,&Client.sin_addr.s_addr,CLIENTIP,BUFSIZ) == NULL){
             SHOW_ERR("inet_ntop",-4);
         }
-
-        time(CurTime);
-        tm =localtime(CurTime);
+        time_t CurTime=time(NULL);
+        struct tm *tms =localtime(&CurTime);
         memset(tim_str,0,BUFSIZ);
-        strftime(tim_str,BUFSIZ,"Curent time:%Y-%m-%d %H:%M:%S\n",tm);
+        strftime(tim_str,BUFSIZ,"Curent time:%Y-%m-%d %H:%M:%S\n",tms);
 
 
         fprintf(stdout,"%s :%s\n",CLIENTIP,"Query time");
