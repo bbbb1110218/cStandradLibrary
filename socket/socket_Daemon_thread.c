@@ -9,7 +9,7 @@
 
 /**
  * 
- * @file :守护时间 tcp的访问弹时间给她
+ * @file :  守护进程.
  * @function:		
  * 
  * @brief:			
