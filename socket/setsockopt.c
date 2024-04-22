@@ -26,7 +26,7 @@
  *              IP_ADD_MEMBERSHIP   用于设置 IP 多播的选项。
  *              IP_DROP_MEMBERSHIP  用于设置 IP 多播的选项。
  *              SO_DONTROUTE        操作系统会尝试直接将数据包发送到目标主机，而不通过路由表。这通常用于实现一些底层的网络协议或诊断工具。
- *              SO_TIMESTAMP        时间戳接收到dgram流量       timestamp received dgram traffic 
+ *              SO_TIMESTAMP        时间戳接收到dgram流量       timestamp received dgram traffic  收到 Dgram 流量的时间戳
  *              SO_DONTTRUNC        
  * @param:
  * @param:
